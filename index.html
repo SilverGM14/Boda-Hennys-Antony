@@ -113,7 +113,7 @@
 
     <div class="location">
         <p class="fs-5">Ceremonia en la Iglesia de Los Ríos, Bahoruco</p>
-        <p><a href="geo:18.519981776573196,-71.58864341496653" target="_blank" class="btn btn-outline-primary">Ver en Google Maps</a></p>
+        <p><a href="#" id="mapsLink" class="btn btn-outline-primary">Ver en Google Maps</a></p>
     </div>
 
     <div class="description">
@@ -142,6 +142,16 @@
 
 <!-- JS de Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('mapsLink').addEventListener('click', function() {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            window.location.href = 'geo:18.519981776573196,-71.58864341496653';
+        } else {
+            window.open('https://www.google.com/maps?q=18.519981776573196,-71.58864341496653', '_blank');
+        }
+    });
+</script>
 
 </body>
 </html>
